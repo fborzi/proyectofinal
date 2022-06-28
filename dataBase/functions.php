@@ -102,33 +102,10 @@ function logearUsuario($connection,$email,$password){
         exit();
     }else if($emailExiste["usersPassword"] === $password){
         session_start();
-        if($emailExiste["usersID"] === 1){
-            $_SESSION["userid"] = $emailExiste["usersID"];
-            $_SESSION["userEmail"] = $emailExiste["usersEmail"];
-            header("Location: ../adminLogin.php?error=none");
-            exit();
-        }else{
-            $_SESSION["userid"] = $emailExiste["usersID"];
-            $_SESSION["userEmail"] = $emailExiste["usersEmail"];
-            header("Location: ../ventaMayorista.php?error=none");
-            exit();
-        }
-        
-    }
-
-}
-
-function crearSentencia($connection, $codigo, $nombre, $rubro, $subrubro, $precio, $moneda, $cliente){
-    $sql = "INSERT INTO productos (producto_codigo, producto_nombre, producto_rubro, producto_subrubro, producto_precio, producto_moneda, usersID) VALUES (?, ?, ?, ?, ?, ?, ?);";
-    $stmt = mysqli_stmt_init($connection);
-    if(!mysqli_stmt_prepare($stmt,$sql)){
-        header("Location: ../index.php?error=errorSQL");
+        $_SESSION["userid"] = $emailExiste["usersID"];
+        $_SESSION["userEmail"] = $emailExiste["usersEmail"];
+        header("Location: ../ventaMayorista.php?error=none");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "sssssss",$codigo, $nombre, $rubro, $subrubro, $precio, $moneda, $cliente);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-
-    header("Location: ../adminLogin.php?error=none");
 }

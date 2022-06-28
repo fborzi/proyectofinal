@@ -1,11 +1,11 @@
 <?php
 if(isset($_POST["submit"])){
-    $nombre = $_POST["nombre"];
-    $apellido = $_POST["apellido"];
-    $empresa = $_POST["empresa"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $repeatpassword = $_POST["repeatpassword"];
+    $nombre = $_POST["nombre"];//htmlspecialchars($_POST["nombre"]);
+    $apellido = htmlspecialchars($_POST["apellido"]);
+    $empresa = htmlspecialchars($_POST["empresa"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $password = htmlspecialchars($_POST["password"]);
+    $repeatpassword = htmlspecialchars($_POST["repeatpassword"]);
     
     require_once "../dataBase/dataBaseHandler.php";
     require_once "../dataBase/functions.php";

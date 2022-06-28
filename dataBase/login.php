@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["submit"])){
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $email = htmlspecialchars($_POST["email"]);
+    $password = htmlspecialchars($_POST["password"]);
 
     require_once "../dataBase/dataBaseHandler.php";
     require_once "../dataBase/functions.php";

@@ -1,5 +1,5 @@
 <?php
-  include '../proyectoFinal/header.php';
+  include '../proyectofinal/header.php';
 ?>
   <main>
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">

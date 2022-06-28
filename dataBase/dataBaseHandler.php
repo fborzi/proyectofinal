@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $dataBaseUsername = "root";
 $dataBasePassword = "";
-$dataBaseName = "digitalsound";
+$dataBaseName = "digitalsound_db";
 
 $connection = mysqli_connect($servidor, $dataBaseUsername, $dataBasePassword, $dataBaseName);
 
