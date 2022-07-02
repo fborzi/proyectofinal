@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Franco Borzi">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Venta Mayorista - Digital Sound</title>
+    <title>Cargar Productos - Digital Sound</title>
     <link href="../proyectofinal/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../proyectofinal/assets/css/signin.css" rel="stylesheet" >
   </head>

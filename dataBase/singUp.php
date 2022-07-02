@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST["submit"])){
-    $nombre = $_POST["nombre"];//htmlspecialchars($_POST["nombre"]);
+    $nombre = htmlspecialchars($_POST["nombre"]);
     $apellido = htmlspecialchars($_POST["apellido"]);
     $empresa = htmlspecialchars($_POST["empresa"]);
     $email = htmlspecialchars($_POST["email"]);

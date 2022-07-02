@@ -109,3 +109,30 @@ function logearUsuario($connection,$email,$password){
     }
 
 }
+
+
+function cargarProducto($codigo, $nombre, $descripcion, $precio, $imagen){
+    $sql = "INSERT INTO products (productsCode, productsName, productsDescription, productsPrice, productsImage) VALUES (?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($connection);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("Location: ../cargarProductos.php?error=errorSQL");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "sssss",$codigo, $nombre, $descripcion, $precio, $imagen);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("Location: ../cargarProductos.php?error=none");
+}
+
+function emptyInputProductos($codigo, $nombre, $descripcion, $precio, $imagen){
+    $result =true;
+
+    if(empty($codigo) || empty($nombre) || empty($descripcion) || empty($precio) || empty($imagen)){
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
